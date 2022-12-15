@@ -1,0 +1,52 @@
+// Class Linked List
+
+#include<iostream>
+using namespace std;
+
+class Node{
+    public:
+    int data;
+    Node *next;
+};
+int main(){
+
+    Node* N1 = new Node();
+    cout<<"\n Enter Num 1 \n";
+    cin>>N1->data;
+
+    Node* N2 = new Node();
+    cout<<"\n Enter Num 2 \n";
+    cin>>N2->data;
+     
+    Node* N3 = new Node();
+    cout<<"\n Enter Num 3 \n";
+    cin>>N3->data;
+
+    N1->next = N2;
+    N2->next = N3;
+    N3->next = NULL;
+    
+   
+    Node* head = N1;
+   
+    Node* temp = head;
+
+     temp = head;
+    if(temp == NULL){
+        cout<<"\n Linked List is Empty";
+    }
+    else{
+        cout<<"\n Linked List are :\n";
+        while(temp->next!=NULL){
+
+            cout<<temp->data<<endl;
+            temp=temp->next;
+            
+            if(temp->next == NULL){
+                cout<<temp->data<<endl;
+                break;
+        }
+        }
+    }
+    return 0;
+}
