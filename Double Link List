@@ -1,0 +1,56 @@
+// Double Link List
+
+#include<iostream>
+using namespace std;
+
+class Node{
+    public:
+    int data;
+    Node *next;
+    Node *previous;
+};
+int main(){
+
+    Node* N1 = new Node();
+    cout<<"\n Enter Num 1 \n";
+    cin>>N1->data;
+
+    Node* N2 = new Node();
+    cout<<"\n Enter Num 2 \n";
+    cin>>N2->data;
+     
+    Node* N3 = new Node();
+    cout<<"\n Enter Num 3 \n";
+    cin>>N3->data;
+
+    N1->previous = NULL;
+    N1->next = N2;
+    N2->previous = N1;
+    N2->next = N3;
+    N3->previous = N2;
+    N3->next = NULL;
+    
+   
+    Node* tail = N3;
+    Node* head = N1;
+    Node* temp = tail;
+
+    temp = tail;
+    if(temp == NULL){
+        cout<<"\n Linked List is Empty";
+    }
+    else{
+        cout<<"\n Linked List are :\n";
+        while(temp->previous!=NULL){
+
+            cout<<temp->data<<endl;
+            temp=temp->previous;
+            
+            if(temp->previous == NULL){
+                cout<<temp->data<<endl;
+                break;
+            }
+        }
+    }
+    return 0;
+}
